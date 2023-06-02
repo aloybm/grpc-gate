@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package accesscontrol;
+
+message MasukRequest {
+  string idkartu = 1;
+  int32 idgate = 2;
+}
+
+message MasukResponse {
+  string return = 1;
+}
+
+message KeluarRequest {
+  string idkartu = 1;
+  int32 idgate = 2;
+}
+
+message KeluarResponse {
+  string return = 1;
+}
+
+service AccessControl {
+  rpc masuk(MasukRequest) returns (MasukResponse);
+  rpc keluar(KeluarRequest) returns (KeluarResponse);
+}
